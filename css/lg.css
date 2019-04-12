@@ -1,0 +1,116 @@
+/* 公共样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body,html,main {
+    width: 100%;
+}
+body {
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: Microsoft Yahei;
+}
+a {
+    text-decoration: none;
+    color: aqua;
+}
+clearfix::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.iconfont {
+    font-size: 21px;
+}
+/* header部分 */
+header {
+    position: relative;
+    top: 20px;
+    width: 100%;
+}
+header .login {
+    float: right;
+    margin-right: 20px;
+    font-size: 30px;
+}
+/* 登录注册部分 */
+.flip-modal {
+    /* 默认隐藏 */
+     display: none;
+}
+.modal {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% -50%);
+    width: 400px;
+    padding: 16px;
+    background-color: #ababab;
+    box-shadow: 0 3px 4px 5px 
+}
+.modal .close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+.modal .tabs {
+    text-align: center;
+}
+.modal .tabs a {
+    display: inline-block;
+    font-size: 20px;
+    margin: 0 10px;
+    color: #fff;
+}
+.modal .tabs a.active {
+    border-bottom: 2px solid red;
+}
+.modal .content {
+    padding: 20px 40px;
+}
+.modal .errormsg {
+    font-size: 10px;
+    color: red;
+}
+.modal .content .input-field {
+    position: relative;
+    margin-top: 10px;
+}
+.modal .content .input-field .ic{
+    position: absolute;
+    left: 4px;
+    top: 6px;
+}
+.modal .content input[type=text],
+.modal .content input[type=password] {
+    width: 100%;
+    line-height: 1.4;
+    padding: 10px 10px 10px 28px;
+    outline: none;
+}
+.modal .content input[type=submit] {
+    padding: 6px 10px;
+    line-height: 1.4;
+    background: #ababab;
+    box-shadow: 0 0 2px rgba(185, 143, 143, 0.3);
+    outline: none;
+}
+/* 动画效果  */
+.flip-modal.login .modal-login,
+.flip-modal.register .modal-register {
+    /*模态框登录状态下沿着Y轴旋转0度*/
+    transform: translate(-50%, -50%) rotateY(0deg); 
+    /*背部隐藏*/
+    backface-visibility: hidden;
+    /*反转时长*/
+    transition: all 1s;
+}
+.flip-modal.login .modal-register,
+.flip-modal.register .modal-login {
+    /*模态框注册状态下沿着Y轴旋转180度*/
+    transform: translate(-50%, -50%) rotateY(180deg);
+    backface-visibility: hidden;
+    transition: all 1s;
+}
